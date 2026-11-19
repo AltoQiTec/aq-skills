@@ -1,6 +1,6 @@
 # AQ Skills
 
-Coleção de **Agent Skills** para o Claude que trabalham sobre os softwares da **AltoQi** por meio dos seus servidores **MCP**. Cada skill ensina o Claude a executar uma tarefa de engenharia ou de gestão de ponta a ponta: auditar um projeto contra a norma, gerar um relatório, conciliar o orçamento com o modelo, distribuir tarefas para a equipe e assim por diante.
+Coleção de **Agent Skills** que trabalham sobre os softwares da **AltoQi** por meio dos seus servidores **MCP**. Cada skill ensina um agente de IA a executar uma tarefa de engenharia ou de gestão de ponta a ponta: auditar um projeto contra a norma, gerar um relatório, conciliar o orçamento com o modelo, distribuir tarefas para a equipe e assim por diante.
 
 São **95 skills**, escritas em português (pt-BR), organizadas por produto:
 
@@ -15,7 +15,7 @@ São **95 skills**, escritas em português (pt-BR), organizadas por produto:
 
 ## Pré-requisitos
 
-- Um ambiente do Claude com suporte a Skills: claude.ai, Claude Desktop (Cowork) ou Claude Code.
+- Uma ferramenta de IA com suporte a Agent Skills (pastas com `SKILL.md`) e a conectores MCP, como Claude, ChatGPT, Codex, entre outras.
 - O **conector MCP** do produto AltoQi que a skill usa, conectado e autenticado.
 - Para skills do Eberick, do Builder e do Visus: o **projeto aberto** no software, já que a maioria lê o projeto ativo.
 - Para os **fluxos integrados**: todos os MCPs envolvidos conectados ao mesmo tempo (veja a coluna "MCPs" na tabela).
@@ -65,6 +65,10 @@ unzip -o skills/eberick/eberick-relatorio-avaliacao-do-projeto.zip 'skills/*' -d
 ```
 
 Depois de instalar, abra uma sessão nova do Claude Code. Cada skill também vira um comando: digite `/` e procure pelo nome, por exemplo `/builder-mapa-de-erros`. No Claude Code o nome vem da pasta, então a skill de ATP aparece como `/eberick-relatorio-atp`.
+
+### Outras ferramentas de IA
+
+Os pacotes seguem o formato aberto de Agent Skills: uma pasta com o `SKILL.md` e os arquivos de apoio. Para usar em outra ferramenta (ChatGPT, Codex etc.), extraia o `.skill` como nos comandos acima e coloque a pasta onde a ferramenta procura skills, conforme a documentação dela. O conector MCP do produto AltoQi precisa estar configurado na mesma ferramenta.
 
 ## Modo de operação
 
@@ -239,7 +243,7 @@ description: "Analisa e corrige o balanceamento de fases dos quadros elétricos 
 ---
 ```
 
-A `description` é o que o Claude lê para decidir quando acionar a skill. Por isso ela diz o que a skill faz, se lê ou grava, as frases típicas do usuário e qual skill usar nos casos vizinhos.
+A `description` é o que o agente de IA lê para decidir quando acionar a skill. Por isso ela diz o que a skill faz, se lê ou grava, as frases típicas do usuário e qual skill usar nos casos vizinhos.
 
 Para ver o conteúdo de uma skill sem extrair:
 
