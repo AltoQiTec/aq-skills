@@ -4,7 +4,7 @@ Guia para agentes de IA (Claude Code, Codex, Cursor e afins) que trabalham nesta
 
 ## O que é esta repo
 
-Uma coleção de Agent Skills para o Claude que operam os softwares da AltoQi pelos seus servidores MCP. Não há código de aplicação, build nem testes: o conteúdo são instruções em Markdown empacotadas em `.zip`. Todo o texto das skills é em **português do Brasil, com acentuação**.
+Uma coleção de Agent Skills que operam os softwares da AltoQi pelos seus servidores MCP, para qualquer ferramenta de IA que suporte Agent Skills e MCP (Claude, ChatGPT, Codex e outras). Não há código de aplicação, build nem testes: o conteúdo são instruções em Markdown empacotadas em `.zip`. Todo o texto das skills é em **português do Brasil, com acentuação**.
 
 ## Mapa pasta → produto
 
@@ -67,7 +67,7 @@ Mantenha o nome da pasta raiz igual ao que já estava no pacote, a menos que a t
 
 ### Descrição (frontmatter `description`)
 
-A descrição decide quando o Claude aciona a skill. Siga o padrão das skills mais recentes:
+A descrição decide quando o agente aciona a skill. Siga o padrão das skills mais recentes:
 
 1. **O que faz**, citando o produto: "… do projeto aberto no AltoQi Builder pelo MCP: …".
 2. **Modo**: "Só leitura." ou "GRAVA no projeto, com confirmação."
@@ -98,6 +98,13 @@ Qualquer skill que altere o projeto ou a base precisa:
 
 - Atualize o catálogo do `README.md` (tabela do produto, contagem por pasta e total no topo).
 - Atualize as referências "Para X use …" nas skills vizinhas, se fizer sentido.
+
+## Fluxo de git
+
+- Cada mudança vai numa branch curta criada a partir da `main`, com nome no padrão Conventional Commits: `<tipo>/<descricao-curta>`, por exemplo `docs/readme-ferramentas-ia`, `feat/builder-nova-skill`, `fix/eberick-taxa-compressao`. Use os tipos `feat`, `fix`, `docs`, `refactor` e `chore`.
+- Mensagens de commit no mesmo padrão: `<tipo>: <descrição em português>`, por exemplo `docs: corrige a instalação no Claude Code`.
+- A PR aponta direto para a `main`. Quem faz o merge é o mantenedor; a branch é apagada automaticamente depois do merge.
+- Não faça commit direto na `main`.
 
 ## Higiene
 
