@@ -30,7 +30,19 @@ São **95 skills**, escritas em português (pt-BR), organizadas por produto:
 
 ### Claude Code
 
-Um arquivo `.skill` é um `.zip` com uma pasta `<nome-da-skill>/SKILL.md` dentro. Basta extrair em `~/.claude/skills/` (todas as sessões) ou em `.claude/skills/` (só um projeto):
+Um arquivo `.skill` é um `.zip` com uma pasta `<nome-da-skill>/SKILL.md` dentro. Basta extrair em `~/.claude/skills/` (todas as sessões) ou em `.claude/skills/` dentro de um projeto (só nele). Os comandos abaixo rodam a partir da raiz desta repo:
+
+```bash
+git clone https://github.com/AltoQiTec/aq-skills.git && cd aq-skills
+```
+
+Crie a pasta de destino antes, porque o `unzip` não cria `~/.claude/` quando ela ainda não existe:
+
+```bash
+mkdir -p ~/.claude/skills
+```
+
+Para instalar uma skill:
 
 ```bash
 unzip -o skills/builder/builder-mapa-de-erros.skill -d ~/.claude/skills/
@@ -51,6 +63,8 @@ mkdir -p ~/.claude/skills/alocacao-de-recursos && cp skills/processos/processos-
 ```bash
 unzip -o skills/eberick/eberick-relatorio-avaliacao-do-projeto.zip 'skills/*' -d /tmp/atp && cp -R /tmp/atp/skills/eberick-relatorio-atp ~/.claude/skills/
 ```
+
+Depois de instalar, abra uma sessão nova do Claude Code. Cada skill também vira um comando: digite `/` e procure pelo nome, por exemplo `/builder-mapa-de-erros`. No Claude Code o nome vem da pasta, então a skill de ATP aparece como `/eberick-relatorio-atp`.
 
 ## Modo de operação
 
