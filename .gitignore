@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# Pacote temporário gerado ao reempacotar uma skill (ver AGENTS.md)
+*.skill.new
